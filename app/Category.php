@@ -8,4 +8,9 @@ class Category extends Model
 {
     //
     protected $table="categories";
+    public $timestamps = false;
+    
+    public function article(){
+        return $this->hasMany('App\Article', 'cateogry_id');
+    }
 }

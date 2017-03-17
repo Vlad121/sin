@@ -10,5 +10,12 @@ use Illuminate\Foundation\Auth\Access\AuthorizesResources;
 
 class Controller extends BaseController
 {
-    use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
-}
+   public function get(){
+       $categoties = Category::all();
+   return view('categories', ["categories"=>categories]);
+   foreach($categories as $category)
+       echo $category->name."<br/>";
+   }
+  }       
+   
+
