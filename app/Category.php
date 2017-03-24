@@ -10,7 +10,7 @@ class Category extends Model
     protected $table="categories";
     public $timestamps = false;
     
-    public function article(){
-        return $this->hasMany('App\Article', 'cateogry_id');
+    public function articles(){
+        return $this->hasMany('App\Article', 'category_id');
     }
 }

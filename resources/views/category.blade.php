@@ -1,17 +1,16 @@
 
+<h4>{{$category->name}}</h4>
 <ul>
-
-@foreach($categories as $category)
-<li><a href ="{{route("category.get", ["id"=>$category->id])}}">{{$category->name}}</a></li>
+@foreach ($category->articles as $article)
+<li>{{$article->title}}<li>
 @endforeach
-</ul> 
-
+</ul>
+    
 <form method="Post">
     <span>Category name</span>
     <input type ="test" name="name" placeholder="...">
     <input type ="hidden" name="token" placeholder="...">
-    <button type ="submit">Add category</button>
+    <button type ="submit">Add article</button>
     <button type ="reset">Cancel</button>
 </form>
     
- 
